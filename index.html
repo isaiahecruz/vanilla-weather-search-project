@@ -5,10 +5,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aggie Football Weather App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
-  <h1>Welcome to the Aggie Football Weather App 🏈👍</h1>
+  <header>
+    <h1>Welcome to the Aggie Football Weather App 🏈👍</h1>
+  </header>
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form>
+            <label for="game-select">Choose a Game 🏈</label>
+            <select name="Games" id="game-select">
+              <option value="">-------2024 Schedule-------</option>
+              <option value="game1">Week 1 - Notre Dame</option>
+              <option value="game2">Week 2 - McNeese State</option>
+              <option value="game3">Week 3 - Florida</option>
+              <option value="game4">Week 4 - Bowling Green</option>
+              <option value="game5">Week 5 - Arkansas</option>
+              <option value="game6">Week 6 - Missouri</option>
+              <option value="game7">Week 7 - Mississippi State</option>
+              <option value="game8">Week 8 - LSU</option>
+              <option value="game9">Week 9 - South Carolina</option>
+              <option value="game10">Week 10 - New Mexico State</option>
+              <option value="game11">Week 11 - Auburn</option>
+              <option value="game12">Week 12 - Texas</option>
+            </select>
+          </form>
+          <div class="game-info">
+            <h2>vs. Notre Dame - August 31</h2>
+            <h2>College Station, TX @ 6:30 PM(CST)</h2>
+          </div>
+        </div>
+        <div class="col" id="stadiumWeatherDetails">
+          <h2 class="stadium-name">Kyle Field</h2>
+          <h3><span class="weather-emoji">🌤️</span> 83°F</h3>
+          <ul>
+            <li>Wind:</li>
+            <li>Precipitation:</li>
+            <li>Humidity:</li>
+          </ul>
+          <h2>BTHO Notre Dame!👍</h2>
+        </div>
+      </div>
+    </div>
+  </main>
   <footer>Coded by <a href="https://github.com/isaiahecruz" target="_blank">Eli Cruz</a> '19 | Open-sourced on <a
       href="https://github.com/isaiahecruz/vanilla-weather-search-project" target="_blank">GitHub</a> | Hosted on
     <a href="https://aggieweatherapp.netlify.app/" target="_blank">Netlify</a>
