@@ -12,14 +12,15 @@
 
 <body>
   <header>
-    <h1>Welcome to the Aggie Football Weather App 🏈👍</h1>
+    <h1>Welcome to the Aggie Football Weather App 👍</h1>
   </header>
   <main>
     <div class="container">
       <div class="row">
         <div class="col">
           <form>
-            <label for="game-select">Choose a Game 🏈</label>
+            <label for="game-select">🏈 Choose a Game 🏈</label>
+            <br>
             <select name="Games" id="game-select">
               <option value="">-------2024 Schedule-------</option>
               <option value="game1">Week 1 - Notre Dame</option>
@@ -37,21 +38,23 @@
             </select>
           </form>
           <div class="game-info">
-            <h2>vs. Notre Dame - August 31</h2>
-            <h2>College Station, TX @ 6:30 PM(CST)</h2>
+            <h2>Who: Notre Dame</h2>
+            <h2>When: August 31 @ 6:30 PM(CST)</h2>
+            <h2>Where: College Station, TX</h2>
           </div>
         </div>
         <div class="col" id="stadiumWeatherDetails">
           <h2 class="stadium-name">Kyle Field</h2>
-          <h3><span class="weather-emoji">🌤️</span> 83°F</h3>
+          <h3><span class="weather-emoji">🌤️</span> <span class="current-temp">83</span> <span
+              class="degrees-unit">°F</span></h3>
           <ul>
-            <li>Wind:</li>
-            <li>Precipitation:</li>
-            <li>Humidity:</li>
+            <li>Wind: <span class="weather-data-numbers">#</span>mph</li>
+            <li>Precipitation: <span class="weather-data-numbers">#</span>%</li>
+            <li>Humidity: <span class="weather-data-numbers">#</span>%</li>
           </ul>
         </div>
       </div>
-      <h2 class="weekly-chant">BTHO Notre Dame!👍</h2>
+      <h2 class="weekly-chant">BTHO Everyone!</h2>
     </div>
   </main>
   <footer>Coded by <a href="https://github.com/isaiahecruz" target="_blank">Eli Cruz</a> '19 | Open-sourced on <a
