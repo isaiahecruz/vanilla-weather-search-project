@@ -21,7 +21,7 @@
           <form>
             <label for="game-select">🏈 Choose a Game 🏈</label>
             <br>
-            <select name="Games" id="game-select">
+            <select name="Games" id="game-select" onchange="selectGame(this);">
               <option value="">-------2024 Schedule-------</option>
               <option value="game1">Week 1 - Notre Dame</option>
               <option value="game2">Week 2 - McNeese State</option>
@@ -44,7 +44,7 @@
           </div>
         </div>
         <div class="col" id="stadiumWeatherDetails">
-          <h2 class="stadium-name">Kyle Field</h2>
+          <h2 class="stadium-name" id="stadium-name">Kyle Field</h2>
           <h3><span class="weather-emoji">🌤️</span> <span class="current-temp">83</span> <span
               class="degrees-unit">°F</span></h3>
           <ul>
@@ -61,6 +61,7 @@
       href="https://github.com/isaiahecruz/vanilla-weather-search-project" target="_blank">GitHub</a> | Hosted on
     <a href="https://aggieweatherapp.netlify.app/" target="_blank">Netlify</a>
   </footer>
+  <script src="src/index.js"></script>
 </body>
 
 </html>
