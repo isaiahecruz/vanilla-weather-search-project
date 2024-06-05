@@ -19,7 +19,11 @@ function selectGame(event) {
   locationElement.innerHTML = `${location}`;
   stadiumNameElement.innerHTML = `${stadiumName}`;
   weeklyChantElement.innerHTML = `${weeklyChant}`;
-}
+
+  function displayWeather(response) {
+    //let weatherEmojiElement = document.querySelector("#weather-emoji");
+  }
+} //Does the axios function go inside here??
 
 let schedule = {
   game1: {
@@ -106,6 +110,16 @@ let schedule = {
     stadium: "Kyle Field",
     chantName: "TU",
   },
-};
+}; //Add state code and city name to each object? (for API url retrieval)
+
 let dropdownMenu = document.querySelector("#game-select");
 dropdownMenu.addEventListener("change", selectGame);
+
+let apiKey = "27a68ae2ac8d2666fcffa62a471df49c";
+let countryCode = "840";
+let limit = "1";
+let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},${countryCode}&limit=${limit}&appid=${apiKey}`;
+axios.get(apiUrl).then(displayWeather);
+
+// Could we add keys to the 'Schedule' object to access city and state name (i.e., add city name & state codes)?
+// How do I edit the apiUrl (using template literals) to access the city name and state code data? Can they be left as is?
