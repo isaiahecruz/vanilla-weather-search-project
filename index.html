@@ -38,23 +38,24 @@
             </select>
           </form>
           <div class="game-info">
-            <h2 id="opponent">Who: Notre Dame</h2>
-            <h2 id="game-date">When: August 31 @ 6:30 PM(CST)</h2>
-            <h2 id="location">Where: College Station, TX</h2>
+            <h2>Who: <span id="opponent"></span></h2>
+            <h2>When: <span id="game-date"></span></h2>
+            <h2>Where: <span id="location"></span></h2>
           </div>
         </div>
         <div class="col" id="stadiumWeatherDetails">
-          <h2 class="stadium-name" id="stadium-name">Kyle Field</h2>
-          <h3><span class="weather-emoji">🌤️</span> <span class="current-temp">83</span> <span
-              class="degrees-unit">°F</span></h3>
+          <h2 class="stadium-name" id="stadium-name">Stadium</h2>
+          <h3><span class="weather-emoji" id="weather-emoji">🌤️</span> <span class="current-temp"
+              id="current-temp">83</span> <span class="degrees-unit">°F</span></h3>
           <ul>
-            <li>Wind: <span class="weather-data-numbers">#</span>mph</li>
-            <li>Precipitation: <span class="weather-data-numbers">#</span>%</li>
-            <li>Humidity: <span class="weather-data-numbers">#</span>%</li>
+            <li>Wind: <span class="weather-data-numbers" id="mph">#</span>mph</li>
+            <li>Precipitation: <span class="weather-data-numbers" id="preciptation">#</span>%</li>
+            <li>Humidity: <span class="weather-data-numbers" id="humidity">#</span>%</li>
           </ul>
         </div>
       </div>
-      <h2 class="weekly-chant">BTHO Everyone!</h2>
+      <h2 class="weekly-chant">BTHO <span id="bthoWho">Everyone</span>!</h2>
+      <small>* All <em>time data</em> is based off of <strong>Central Standard Time</strong></small>
     </div>
   </main>
   <footer>Coded by <a href="https://github.com/isaiahecruz" target="_blank">Eli Cruz</a> '19 | Open-sourced on <a
