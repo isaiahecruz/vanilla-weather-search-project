@@ -1,7 +1,11 @@
 function selectGame(event) {
   const selectedGame = event.target.value;
   const gameData = schedule[selectedGame];
-  console.log();
+
+  const opponent = gameData.who;
+  const gameDate = gameData.when;
+  const location = gameData.where;
+  const stadiumName = gameData.stadium;
 }
 
 let schedule = {
