@@ -116,7 +116,7 @@ let dropdownMenu = document.querySelector("#game-select");
 dropdownMenu.addEventListener("change", selectGame);
 
 let apiKey = "27a68ae2ac8d2666fcffa62a471df49c";
-let countryCode = "840";
+let countryCode = "US";
 let limit = "1";
 let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},${countryCode}&limit=${limit}&appid=${apiKey}`;
 axios.get(apiUrl).then(displayWeather);
