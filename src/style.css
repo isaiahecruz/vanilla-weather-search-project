@@ -27,7 +27,7 @@ header {
 
 #stadiumWeatherDetails {
   position: relative;
-  top: 15px;
+  top: 75px;
 }
 
 .weather-emoji {
@@ -36,6 +36,7 @@ header {
 
 .current-temp {
   font-size: 2.5rem;
+  color: #00ffff;
 }
 
 .degrees-unit {
@@ -45,13 +46,26 @@ header {
   right: 5px;
 }
 
+#realFeelUnits {
+  font-size: .75rem;
+  position: relative;
+  bottom: 5px;
+}
+
 .weather-data-numbers {
   color: #00ffff;
 }
 
 .weekly-chant {
   text-align: center;
-  margin-bottom: 30px;
+  position: relative;
+  top: 30px;
+  padding: 15px 0px;
+}
+
+small {
+  position: relative;
+  top: 20px;
 }
 
 ul {

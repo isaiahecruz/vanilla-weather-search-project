@@ -21,10 +21,30 @@ function selectGame(event) {
   weeklyChantElement.innerHTML = `${weeklyChant}`;
 
   function displayWeather(response) {
-    //let weatherEmojiElement = document.querySelector("#weather-emoji");
-  }
-}
+    const weatherEmojiElement = document.querySelector("#weather-emoji");
+    const currentTempElement = document.querySelector("#current-temp");
+    const feelsLikeElement = document.querySelector("#feelsLike");
+    const windSpeedElement = document.querySelector("#mph");
+    const precipitationElement = document.querySelector("#precipitation");
+    const humidityElement = document.querySelector("#humidity");
 
+    let temp = response.data.main.temp;
+    let realFeel = response.data.main.feels_like;
+    let windSpeed = response.data.wind.speed;
+
+    currentTempElement.innerHTML = `${Math.round(temp)}`;
+    windSpeedElement.innerHTML = `${Math.round(windSpeed)}`;
+    feelsLikeElement.innerHTML = `${Math.round(realFeel)}`;
+
+    console.log(response.data);
+  }
+
+  const apiKey = "27a68ae2ac8d2666fcffa62a471df49c";
+  let lat = gameData.lat;
+  let lon = gameData.lon;
+  let apiUrlWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrlWeather).then(displayWeather);
+}
 let schedule = {
   game1: {
     who: "University of Notre Dame",
@@ -32,6 +52,8 @@ let schedule = {
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "Notre Dame",
+    lat: 30.6183939,
+    lon: -96.3455991,
   },
   game2: {
     who: "McNeese State University",
@@ -39,6 +61,8 @@ let schedule = {
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "McNeese State",
+    lat: 30.6183939,
+    lon: -96.3455991,
   },
   game3: {
     who: "University of Florida",
@@ -46,6 +70,8 @@ let schedule = {
     where: "Gainesville, FL",
     stadium: "Ben Hill Griffin Stadium",
     chantName: "Florida",
+    lat: 29.6519684,
+    lon: -82.3249846,
   },
   game4: {
     who: "Bowling Green University",
@@ -53,6 +79,8 @@ let schedule = {
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "Bowling Green",
+    lat: 30.6183939,
+    lon: -96.3455991,
   },
   game5: {
     who: "University of Arkansas",
@@ -60,6 +88,8 @@ let schedule = {
     where: "Arlington, TX",
     stadium: "AT&T Stadium",
     chantName: "Arkansas",
+    lat: 32.7355816,
+    lon: -97.1071186,
   },
   game6: {
     who: "University of Missouri",
@@ -67,6 +97,8 @@ let schedule = {
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "Mizzou",
+    lat: 30.6183939,
+    lon: -96.3455991,
   },
   game7: {
     who: "Mississippi State University",
@@ -74,6 +106,8 @@ let schedule = {
     where: "Starkville, MS",
     stadium: "Davis Wade Stadium",
     chantName: "Miss State",
+    lat: 33.4503998,
+    lon: -88.8183872,
   },
   game8: {
     who: "Louisiana State Univeristy",
@@ -81,6 +115,8 @@ let schedule = {
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "LSU",
+    lat: 30.6183939,
+    lon: -96.3455991,
   },
   game9: {
     who: "University of South Carolina",
@@ -88,6 +124,8 @@ let schedule = {
     where: "Columbia, SC",
     stadium: "Williams-Brice Stadium",
     chantName: "SC",
+    lat: 34.0007493,
+    lon: -81.0343313,
   },
   game10: {
     who: "New Mexico State University",
@@ -95,13 +133,17 @@ let schedule = {
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "New Mexico State",
+    lat: 30.6183939,
+    lon: -96.3455991,
   },
   game11: {
     who: "Auburn University",
     when: "November 23 @ TBD",
-    where: "College Station, TX",
+    where: "Auburn, AL",
     stadium: "Jordan-Hare",
     chantName: "Auburn",
+    lat: 32.6098566,
+    lon: -85.4807825,
   },
   game12: {
     who: "University of Texas",
@@ -109,20 +151,15 @@ let schedule = {
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "TU",
+    lat: 30.6183939,
+    lon: -96.3455991,
   },
-}; //Add state code and city name to each object? (for API url retrieval)...or
-// Should I create an object that contains every city name, state code?
+};
 
 let dropdownMenu = document.querySelector("#game-select");
 dropdownMenu.addEventListener("change", selectGame);
 
-let apiKey = "27a68ae2ac8d2666fcffa62a471df49c";
-let countryCode = "US";
-let limit = "1";
-let apiUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},${countryCode}&limit=${limit}&appid=${apiKey}`;
-axios.get(apiUrl).then(displayWeather);
-
-// Could we add keys to the 'Schedule' object to access city and state name (i.e., add city name & state codes)?
-// How do I edit the apiUrl (using template literals) to access the city name and state code data?
-
-//How will I create JS (event listener) that will send a city name and state code to the 'display weather' function via 'change' event.
+//TO DO:
+//Finish creating precipitation and humidity variables and their corresponding dynamic innerHTML
+//Integrate dynamic weather emojis via openWeather API; correspond it to its innerHTML interface
+//Consider a forecast option...
