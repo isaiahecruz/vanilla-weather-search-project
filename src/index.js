@@ -21,22 +21,34 @@ function selectGame(event) {
   weeklyChantElement.innerHTML = `${weeklyChant}`;
 
   function displayWeather(response) {
-    const weatherEmojiElement = document.querySelector("#weather-emoji");
+    const currentWeatherElement = document.querySelector("#currentWeather");
     const currentTempElement = document.querySelector("#current-temp");
     const feelsLikeElement = document.querySelector("#feelsLike");
     const windSpeedElement = document.querySelector("#mph");
-    const precipitationElement = document.querySelector("#precipitation");
     const humidityElement = document.querySelector("#humidity");
 
+    let weather = response.data.weather[0].main;
     let temp = response.data.main.temp;
     let realFeel = response.data.main.feels_like;
     let windSpeed = response.data.wind.speed;
+    let humidity = response.data.main.humidity;
 
+    currentWeatherElement.innerHTML = `${weather}`;
     currentTempElement.innerHTML = `${Math.round(temp)}`;
     windSpeedElement.innerHTML = `${Math.round(windSpeed)}`;
     feelsLikeElement.innerHTML = `${Math.round(realFeel)}`;
+    humidityElement.innerHTML = `${humidity}`;
 
-    console.log(response.data);
+    //weatherEmojiElement.innerHTML = `${icon}`;
+    function changeIcon(icon) {
+      let weatherEmoji = icon.config.url;
+      const iconElement = document.querySelector("#weather-emoji");
+      iconElement.innerHTML = `<img src="${weatherEmoji}" alt="dynamic weather icon"
+              id="weather-emoji">`;
+    }
+    let weatherEmoji = response.data.weather[0].icon;
+    let iconApi = `https://openweathermap.org/img/wn/${weatherEmoji}@2x.png`;
+    axios.get(iconApi).then(changeIcon);
   }
 
   const apiKey = "27a68ae2ac8d2666fcffa62a471df49c";
@@ -45,6 +57,7 @@ function selectGame(event) {
   let apiUrlWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrlWeather).then(displayWeather);
 }
+
 let schedule = {
   game1: {
     who: "University of Notre Dame",
@@ -160,6 +173,4 @@ let dropdownMenu = document.querySelector("#game-select");
 dropdownMenu.addEventListener("change", selectGame);
 
 //TO DO:
-//Finish creating precipitation and humidity variables and their corresponding dynamic innerHTML
-//Integrate dynamic weather emojis via openWeather API; correspond it to its innerHTML interface
-//Consider a forecast option...
+//Consider a forecast option...or importing various helmets

@@ -13,7 +13,7 @@ header {
 }
 
 .col {
-  padding: 15px;
+  padding-top: 30px;
   text-align: center;
 }
 
@@ -25,13 +25,16 @@ header {
   text-decoration: underline;
 }
 
-#stadiumWeatherDetails {
-  position: relative;
-  top: 75px;
+#iconAndTempNumber {
+  margin: 0;
 }
 
-.weather-emoji {
-  font-size: 2.75rem;
+#weather-emoji {
+  position: relative;
+  bottom: 5px;
+  left: 9px;
+  height: 70px;
+  width: 70px;
 }
 
 .current-temp {
@@ -58,14 +61,13 @@ header {
 
 .weekly-chant {
   text-align: center;
-  position: relative;
-  top: 30px;
   padding: 15px 0px;
+  margin: 0;
 }
 
 small {
   position: relative;
-  top: 20px;
+  top: 15px;
 }
 
 ul {
