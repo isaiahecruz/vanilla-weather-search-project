@@ -8,6 +8,12 @@ function selectGame(event) {
   const stadiumName = gameData.stadium;
   const weeklyChant = gameData.chantName;
 
+  const defaultOpponent = "";
+  const defaultGameDate = "";
+  const defaultLocation = "";
+  const defaultStadium = "Stadium";
+  const defaultWeeklyChant = "BTHO Everyone!";
+
   let opponentElement = document.querySelector("#opponent");
   let gameDateElement = document.querySelector("#game-date");
   let locationElement = document.querySelector("#location");
@@ -19,6 +25,16 @@ function selectGame(event) {
   locationElement.innerHTML = `${location}`;
   stadiumNameElement.innerHTML = `${stadiumName}`;
   weeklyChantElement.innerHTML = `${weeklyChant}`;
+
+  if (opponent == undefined) {
+    opponentElement.innerHTML = `${defaultOpponent}`;
+    gameDateElement.innerHTML = `${defaultGameDate}`;
+    locationElement.innerHTML = `${defaultLocation}`;
+    stadiumNameElement.innerHTML = `${defaultStadium}`;
+    weeklyChantElement.innerHTML = `${defaultWeeklyChant}`;
+  }
+
+  console.log(selectedGame);
 
   function displayWeather(response) {
     const currentWeatherElement = document.querySelector("#currentWeather");
@@ -39,11 +55,10 @@ function selectGame(event) {
     feelsLikeElement.innerHTML = `${Math.round(realFeel)}`;
     humidityElement.innerHTML = `${humidity}`;
 
-    //weatherEmojiElement.innerHTML = `${icon}`;
     function changeIcon(icon) {
       let weatherEmoji = icon.config.url;
       const iconElement = document.querySelector("#weather-emoji");
-      iconElement.innerHTML = `<img src="${weatherEmoji}" alt="dynamic weather icon"
+      iconElement.innerHTML = `<img src="${weatherEmoji}" alt="dynamic and responsive weather icon"
               id="weather-emoji">`;
     }
     let weatherEmoji = response.data.weather[0].icon;
@@ -173,4 +188,4 @@ let dropdownMenu = document.querySelector("#game-select");
 dropdownMenu.addEventListener("change", selectGame);
 
 //TO DO:
-//Consider a forecast option...or importing various helmets
+//How do I manipulate the innerHTMLs (with if statement) to return to default(refreshed page) values? (line 29)
