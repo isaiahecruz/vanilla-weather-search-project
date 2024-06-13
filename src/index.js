@@ -32,7 +32,7 @@ function selectGame(event) {
     locationElement.innerHTML = `${defaultLocation}`;
     stadiumNameElement.innerHTML = `${defaultStadium}`;
     weeklyChantElement.innerHTML = `${defaultWeeklyChant}`;
-  }
+  } // should I make a function that injects the 'default' html values when the '2024 schedule' option gets chosen?
 
   console.log(selectedGame);
 
@@ -103,7 +103,7 @@ let schedule = {
   },
   game4: {
     who: "Bowling Green University",
-    when: "September 21 @ TBD",
+    when: "September 21 @ 6:30 PM",
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "Bowling Green",
@@ -121,7 +121,7 @@ let schedule = {
   },
   game6: {
     who: "University of Missouri",
-    when: "October 5 @ TBD",
+    when: "October 5 @ 11:00 AM",
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "Mizzou",
@@ -157,7 +157,7 @@ let schedule = {
   },
   game10: {
     who: "New Mexico State University",
-    when: "November 16 @ TBD",
+    when: "November 16 @ 6:45 PM",
     where: "College Station, TX",
     stadium: "Kyle Field",
     chantName: "New Mexico State",
