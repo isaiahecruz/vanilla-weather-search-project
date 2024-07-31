@@ -166,7 +166,7 @@ let schedule = {
   },
   game11: {
     who: "Auburn University",
-    when: "November 23 @ TBD",
+    when: "November 23 @ ",
     where: "Auburn, AL",
     stadium: "Jordan-Hare",
     chantName: "Auburn",
